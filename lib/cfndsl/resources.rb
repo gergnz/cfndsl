@@ -8,10 +8,6 @@ module CfnDsl
     dsl_attr_setter :Type, :DependsOn, :DeletionPolicy, :Condition, :Metadata
     dsl_content_object :Property, :UpdatePolicy, :CreationPolicy
 
-    def addTag(name, value, propagate = nil)
-      add_tag(name, value, propagate)
-    end
-
     def add_tag(name, value, propagate = nil)
       send(:Tag) do
         Key name
